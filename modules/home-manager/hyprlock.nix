@@ -9,8 +9,8 @@ let
   palette = config.colorScheme.palette;
   convert = inputs.nix-colors.lib.conversions.hexToRGBString;
   selected_wallpaper_path =
-    if (config.hyprlock_wallpaper != null) then
-      config.hyprlock_wallpaper
+    if (config.omarchy.hyprlock_wallpaper != null) then
+      toString config.omarchy.hyprlock_wallpaper
     else
       (import ../../lib/selected-wallpaper.nix config).wallpaper_path;
 
