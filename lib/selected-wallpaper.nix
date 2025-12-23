@@ -24,7 +24,9 @@ let
 
   # Handle wallpaper path for generated themes and overrides
   wallpaper_path =
-    if
+    if (cfg.hyprlock_wallpaper != null) then
+      toString cfg.hyprlock_wallpaper
+    else if
       (cfg.theme == "generated_light" || cfg.theme == "generated_dark")
       || (cfg.theme_overrides.wallpaper_path != null)
     then

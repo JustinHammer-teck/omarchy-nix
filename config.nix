@@ -36,6 +36,11 @@ lib: {
       default = { };
       description = "Theme overrides including wallpaper path for generated themes";
     };
+    hyprlock_wallpaper = lib.mkOption {
+      type = lib.types.nullOr lib.types.path;
+      default = null;
+      description = "Path to the hyprlock wallpaper => fallback to the theme wallpaper if not specify";
+    };
     primary_font = lib.mkOption {
       type = lib.types.str;
       default = "Liberation Sans 11";
