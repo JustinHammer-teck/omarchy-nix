@@ -78,6 +78,14 @@ lib: {
         "SUPER, slash, exec, $passwordManager"
       ];
     };
+    kill_app_binding = lib.mkOption {
+      type = lib.types.listOf lib.types.str;
+      default = [
+        "SUPER, W, killactive,"
+        "SUPER, Backspace, killactive,"
+      ];
+      description = "Packages to exclude from the default system packages";
+    };
     exclude_packages = lib.mkOption {
       type = lib.types.listOf lib.types.package;
       default = [ ];
