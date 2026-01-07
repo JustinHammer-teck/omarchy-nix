@@ -1,14 +1,16 @@
-{ config, ... }:
+{ config, lib, ... }:
 let
   cfg = config.omarchy;
 in
 {
-  programs.git = {
+  programs.git = lib.mkDefault {
     enable = true;
-    userName = cfg.full_name;
-    userEmail = cfg.email_address;
-    extraConfig = {
-      credential.helper = "store";
+    settings = {
+      userName = cfg.full_name;
+      userEmail = cfg.email_address;
+      extraConfig = {
+        credential.helper = "store";
+      };
     };
   };
 
