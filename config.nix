@@ -36,6 +36,11 @@ lib: {
       default = { };
       description = "Theme overrides including wallpaper path for generated themes";
     };
+    hyprlock_wallpaper = lib.mkOption {
+      type = lib.types.nullOr lib.types.path;
+      default = null;
+      description = "Path to the hyprlock wallpaper => fallback to the theme wallpaper if not specify";
+    };
     primary_font = lib.mkOption {
       type = lib.types.str;
       default = "Liberation Sans 11";
@@ -77,6 +82,14 @@ lib: {
         "SUPER, O, exec, obsidian -disable-gpu"
         "SUPER, slash, exec, $passwordManager"
       ];
+    };
+    kill_app_binding = lib.mkOption {
+      type = lib.types.listOf lib.types.str;
+      default = [
+        "SUPER, W, killactive,"
+        "SUPER, Backspace, killactive,"
+      ];
+      description = "Packages to exclude from the default system packages";
     };
     exclude_packages = lib.mkOption {
       type = lib.types.listOf lib.types.package;
