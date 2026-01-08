@@ -6,8 +6,8 @@ in
   programs.git = lib.mkDefault {
     enable = true;
     settings = {
-      userName = cfg.full_name;
-      userEmail = cfg.email_address;
+      user.name = cfg.full_name;
+      user.email = cfg.email_address;
       extraConfig = {
         credential.helper = "store";
       };
