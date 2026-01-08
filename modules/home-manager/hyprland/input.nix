@@ -21,6 +21,8 @@
 
       touchpad = {
         natural_scroll = false;
+        clickfinger_behavior = true;
+        drag_3fg = 1;
       };
     };
 
