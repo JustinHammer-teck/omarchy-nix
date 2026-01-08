@@ -21,8 +21,8 @@
       # Normal chrome Youtube tabs
       "opacity 1 1, match:class ^(chromium|google-chrome|google-chrome-unstable)$, match:title .*Youtube.*"
       "opacity 1 0.97, match:class ^(chromium|google-chrome|google-chrome-unstable)$"
-      "opacity 0.97 0.9, match:initialClass ^(chrome-.*-Default)$"
-      "opacity 1 1, match:initialClass ^(chrome-youtube.*-Default)$"
+      "opacity 0.97 0.9, match:initial_class ^(chrome-.*-Default)$"
+      "opacity 1 1, match:initial_class ^(chrome-youtube.*-Default)$"
       "opacity 1 1, match:class ^(zoom|vlc|org.kde.kdenlive|com.obsproject.Studio)$"
       "opacity 1 1, match:class ^(com.libretro.RetroArch|steam)$"
       # Fix some dragging issues with XWayland - commented out as nofocus syntax changed
