@@ -26,7 +26,7 @@ in
   # Initial login experience
   services.greetd = {
     enable = true;
-    settings.default_session.command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+    settings.default_session.command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd start-hyprland";
   };
 
   # Install packages
@@ -46,4 +46,7 @@ in
     noto-fonts-color-emoji
     nerd-fonts.caskaydia-mono
   ];
+
+  powerManagement.powertop.enable = true; # enable powertop auto tuning on startup.
+  services.system76-scheduler.settings.cfsProfiles.enable = true; # Better scheduling for CPU cycles - thanks System76!!!
 }

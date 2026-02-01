@@ -16,7 +16,7 @@
         {
           timeout = 330;
           on-timeout = "hyprctl dispatch dpms off";
-          on-resume = "hyprctl dispatch dpms on && brightnessctl -r";
+          on-resume = "hyprctl dispatch dpms on && brightnessctl -d acpi_video0 -r";
         }
       ];
     };
