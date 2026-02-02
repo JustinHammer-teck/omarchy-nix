@@ -48,5 +48,9 @@ in
   ];
 
   powerManagement.powertop.enable = true; # enable powertop auto tuning on startup.
-  services.system76-scheduler.settings.cfsProfiles.enable = true; # Better scheduling for CPU cycles - thanks System76!!!
+
+  # Use Red Hat's tuned for system performance tuning
+  services.tuned.enable = true;
+  services.tuned.settings.dynamic_tuning = true; # Monitor workload and adjust settings dynamically
+  services.power-profiles-daemon.enable = false; # Conflicts with tuned
 }
