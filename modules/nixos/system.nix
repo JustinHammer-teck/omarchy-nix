@@ -51,6 +51,8 @@ in
 
   # Use Red Hat's tuned for system performance tuning
   services.tuned.enable = true;
+  services.tuned.ppdSupport = true; # Enable tuned-ppd for automatic AC/battery profile switching
   services.tuned.settings.dynamic_tuning = true; # Monitor workload and adjust settings dynamically
+  services.upower.enable = true; # Required for tuned-ppd battery detection
   services.power-profiles-daemon.enable = false; # Conflicts with tuned
 }
