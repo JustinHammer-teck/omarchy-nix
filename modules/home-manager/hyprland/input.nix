@@ -21,6 +21,8 @@
 
       touchpad = {
         natural_scroll = false;
+        clickfinger_behavior = true;
+        drag_3fg = 1;
       };
     };
 
@@ -28,7 +30,7 @@
     gestures = lib.mkDefault {
       gesture = "3, horizontal, workspace";
       workspace_swipe_invert = false;
-      workspace_swipe_distance = 700;
+      workspace_swipe_distance = 400;
     };
   };
 }

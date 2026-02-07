@@ -156,7 +156,12 @@ in
         };
         wireplumber = {
           # Changed from "pulseaudio"
-          "format" = "";
+          format = "{volume}% {icon}]";
+          format-icons = [
+            ""
+            ""
+            ""
+          ];
           format-muted = "󰝟";
           scroll-step = 5;
           on-click = "pavucontrol";

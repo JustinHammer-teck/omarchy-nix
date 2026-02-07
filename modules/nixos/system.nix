@@ -26,7 +26,7 @@ in
   # Initial login experience
   services.greetd = {
     enable = true;
-    settings.default_session.command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+    settings.default_session.command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd start-hyprland";
   };
 
   # Install packages
@@ -46,4 +46,13 @@ in
     noto-fonts-color-emoji
     nerd-fonts.caskaydia-mono
   ];
+
+  powerManagement.powertop.enable = true; # enable powertop auto tuning on startup.
+
+  # Use Red Hat's tuned for system performance tuning
+  services.tuned.enable = true;
+  services.tuned.ppdSupport = true; # Enable tuned-ppd for automatic AC/battery profile switching
+  services.tuned.settings.dynamic_tuning = true; # Monitor workload and adjust settings dynamically
+  services.upower.enable = true; # Required for tuned-ppd battery detection
+  services.power-profiles-daemon.enable = false; # Conflicts with tuned
 }
